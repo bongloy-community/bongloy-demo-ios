@@ -1,0 +1,6 @@
+framework module Pods_bongloy_demo_ios {
+  umbrella header "Pods-bongloy-demo-ios-umbrella.h"
+
+  export *
+  module * { export * }
+}
