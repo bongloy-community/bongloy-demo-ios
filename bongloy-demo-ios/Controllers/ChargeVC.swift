@@ -42,11 +42,16 @@ class ChargeVC: UIViewController {
     override func viewDidLoad(){
         super.viewDidLoad()
         createTextField()
+        createDoneButton()
         self.activityIndicator.color = #colorLiteral(red: 0.5859152079, green: 0.7754819989, blue: 0.3899528384, alpha: 1)
         self.view.addSubview(self.activityIndicator)
         self.activityIndicator.alpha = 0
         cardHolder.addTarget(self, action: #selector(didChangeCardHolder), for: .editingChanged)
         ChargeService.instance.baseURLString = self.backendBaseUrl
+        BuyButton.isEnabled = false
+        cardHolder.delegate = self
+        cardHolder.returnKeyType = .next
+        amount.delegate = self
     }
     
     override func viewDidLayoutSubviews() {
@@ -88,20 +93,35 @@ class ChargeVC: UIViewController {
             })
         }
     }
+}
+
+extension ChargeVC: UITextFieldDelegate {
     
-    func clearTextField(){
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let nextTag = textField.tag + 1
+        view.endEditing(true)
         
+        if let nextResponder = textField.superview?.viewWithTag(nextTag) {
+            nextResponder.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        
+        return true
     }
+    
 }
 
 extension ChargeVC: STPPaymentCardTextFieldDelegate {
+    
     func paymentCardTextFieldDidChange(_ textField: STPPaymentCardTextField) {
         creditCardView.paymentCardTextFieldDidChange(cardNumber: textField.cardNumber, expirationYear: textField.expirationYear, expirationMonth: textField.expirationMonth, cvc: textField.cvc)
+        BuyButton.isEnabled = textField.isValid
     }
+    
 }
 
 extension ChargeVC {
-    
     func createTextField() {
         
         paymentCardTextField.frame = CGRect(x: 15, y: 199, width: self.view.frame.size.width - 30, height: 44)
@@ -140,6 +160,21 @@ extension ChargeVC {
     
     @objc func didChangeCardHolder(textField: UITextField) {
         creditCardView.cardHolderString = textField.text!
+    }
+    
+    func createDoneButton(){
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(self.doneClicked))
+        let flexiblespace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: #selector(self.doneClicked))
+        toolbar.setItems([flexiblespace, doneButton], animated: false)
+    
+        amount.inputAccessoryView = toolbar
+    }
+    
+    @objc func doneClicked(){
+        view.endEditing(true)
     }
 }
 
