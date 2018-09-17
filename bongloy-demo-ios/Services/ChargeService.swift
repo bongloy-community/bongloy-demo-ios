@@ -34,7 +34,6 @@ class ChargeService {
         Alamofire.request(url, method: .post, parameters: params)
             .validate(statusCode: 200..<300)
             .responseString { response in
-                print(response)
                 switch response.result {
                 case .success:
                     completion(nil)

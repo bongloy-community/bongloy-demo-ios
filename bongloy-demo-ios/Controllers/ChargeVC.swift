@@ -9,6 +9,18 @@
 import UIKit
 import Stripe
 import CreditCardForm
+import SCLAlertView
+
+extension STPAPIClient {
+    var apiURL: URL {
+        get{
+            return self.apiURL
+        }
+        set(newValue){
+            self.apiURL = newValue
+        }
+    }
+}
 
 class ChargeVC: UIViewController {
     
@@ -16,6 +28,7 @@ class ChargeVC: UIViewController {
     @IBOutlet weak var amount: TextField!
     @IBOutlet weak var cardHolder: TextField!
     @IBOutlet weak var creditCardView: CreditCardFormView!
+    
     let theme = ThemeVC().theme.stpTheme
     let backendBaseUrl = "https://bongloy-demo-laravel.herokuapp.com"
     let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
@@ -61,13 +74,15 @@ class ChargeVC: UIViewController {
     
     @IBAction func pressBuy(_ sender: Any) {
         self.paymentInProgress = true
+        
         let cardParam  = STPCardParams()
         cardParam.number = paymentCardTextField.cardNumber
         cardParam.expMonth = paymentCardTextField.expirationMonth
         cardParam.expYear = paymentCardTextField.expirationYear
         cardParam.cvc = paymentCardTextField.cvc
-        
-        STPAPIClient.shared().createToken(withCard: cardParam){ (token: STPToken?, error: Error?) in
+        let client = STPAPIClient(publishableKey: "pk_test_2411c55a75ad6d004eaaf240f99b577dec6d6630789c06a23639967ae3c10572")
+        client.apiURL = URL(string: "https://api.bongloy.com/v1")!
+        client.createToken(withCard: cardParam){ (token: STPToken?, error: Error?) in
             guard let token = token, error == nil else { return }
             guard let amountCharge = self.amount.text , self.amount.text != "" else { return }
             ChargeService.instance.createCharge(
@@ -75,21 +90,13 @@ class ChargeVC: UIViewController {
                 amount: Int(amountCharge)!,
                 completion: {
                     (error) in
-                    let title: String
-                    let message: String
                     if let err = error {
                         self.paymentInProgress = false
-                        title = "Error"
-                        message = err.localizedDescription
+                        SCLAlertView().showError("Error", subTitle: err.localizedDescription)
                     }else{
                         self.paymentInProgress = false
-                        title = "Success"
-                        message = "You bought successfully!"
+                        SCLAlertView().showSuccess("Success", subTitle: "Payment successfully!")
                     }
-                    let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-                    let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                    alertController.addAction(action)
-                    self.present(alertController, animated: true, completion: nil)
             })
         }
     }

@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '9.0'
 
 target 'bongloy-demo-ios' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -8,6 +8,7 @@ target 'bongloy-demo-ios' do
   pod 'Stripe'
   pod 'Alamofire'
   pod 'CreditCardForm'
+  pod 'SCLAlertView'
 
   post_install do |installer|
       installer.pods_project.build_configurations.each do |config|
