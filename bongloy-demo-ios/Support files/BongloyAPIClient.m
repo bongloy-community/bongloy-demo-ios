@@ -10,13 +10,7 @@
 
 static NSString * const APIBaseURL = @"https://api.bongloy.com/v1";
 
-#pragma mark - BongloyAPIClient
-
-#if __has_include("Fabric.h")
-@interface BongloyAPIClient ()<FABKit>
-#else
 @interface BongloyAPIClient()
-#endif
 
 @property (nonatomic, strong, readwrite) NSMutableDictionary<NSString *,NSObject *> *sourcePollers;
 @property (nonatomic, strong, readwrite) dispatch_queue_t sourcePollersQueue;
