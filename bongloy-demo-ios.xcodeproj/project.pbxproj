@@ -17,6 +17,7 @@
 		D1A98272213CE0970095B070 /* ChargeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A98271213CE0970095B070 /* ChargeService.swift */; };
 		D1A98275213CE0C70095B070 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A98274213CE0C70095B070 /* Button.swift */; };
 		D1A98277213CE0E60095B070 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A98276213CE0E60095B070 /* TextField.swift */; };
+		D1F1010321588E82003337E2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F1010221588E82003337E2 /* Constants.swift */; };
 		DD71C2AFAC59434FF1886D4B /* Pods_bongloy_demo_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0079FB3A910ECF91B001738D /* Pods_bongloy_demo_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		D1A98271213CE0970095B070 /* ChargeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeService.swift; sourceTree = "<group>"; };
 		D1A98274213CE0C70095B070 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		D1A98276213CE0E60095B070 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		D1F1010221588E82003337E2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F1B35BF0D778763AB22268C2 /* Pods-bongloy-demo-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bongloy-demo-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bongloy-demo-ios/Pods-bongloy-demo-ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 		D1A9825A213CE01E0095B070 /* bongloy-demo-ios */ = {
 			isa = PBXGroup;
 			children = (
+				D1F1010121588E23003337E2 /* Utilities */,
 				D19A98E72148B634009686FA /* Support files */,
 				D1A98273213CE09F0095B070 /* Views */,
 				D1A98270213CE0790095B070 /* Services */,
@@ -137,6 +140,14 @@
 				D1A98276213CE0E60095B070 /* TextField.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D1F1010121588E23003337E2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D1F1010221588E82003337E2 /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +276,7 @@
 				D1A98277213CE0E60095B070 /* TextField.swift in Sources */,
 				D1A9825E213CE01E0095B070 /* ChargeVC.swift in Sources */,
 				D1A9825C213CE01E0095B070 /* AppDelegate.swift in Sources */,
+				D1F1010321588E82003337E2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

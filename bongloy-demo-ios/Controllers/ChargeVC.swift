@@ -30,7 +30,7 @@ class ChargeVC: UIViewController {
     @IBOutlet weak var creditCardView: CreditCardFormView!
     
     let theme = ThemeVC().theme.stpTheme
-    let backendBaseUrl = "https://bongloy-demo-laravel.herokuapp.com"
+    let backendBaseUrl = BACKEND_BASE_URL
     let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
     let paymentCardTextField = STPPaymentCardTextField()
     var window: UIWindow?
