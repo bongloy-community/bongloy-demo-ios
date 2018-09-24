@@ -47,7 +47,7 @@
 #endif
 
 static NSString * const APIVersion = @"2015-10-12";
-static NSString * const APIBaseURL = @"https://api.bongloy.com/v1";
+static NSString * const APIBaseURL = @"https://api.stripe.com/v1";
 static NSString * const APIEndpointToken = @"tokens";
 static NSString * const APIEndpointSources = @"sources";
 static NSString * const APIEndpointCustomers = @"customers";

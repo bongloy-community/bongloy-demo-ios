@@ -80,9 +80,7 @@ class ChargeVC: UIViewController {
         cardParam.expMonth = paymentCardTextField.expirationMonth
         cardParam.expYear = paymentCardTextField.expirationYear
         cardParam.cvc = paymentCardTextField.cvc
-        let client = STPAPIClient(publishableKey: "pk_test_2411c55a75ad6d004eaaf240f99b577dec6d6630789c06a23639967ae3c10572")
-        client.apiURL = URL(string: "https://api.bongloy.com/v1")!
-        client.createToken(withCard: cardParam){ (token: STPToken?, error: Error?) in
+        BongloyAPIClient.sharedBongloy().createToken(withCard: cardParam){ (token: STPToken?, error: Error?) in
             guard let token = token, error == nil else { return }
             guard let amountCharge = self.amount.text , self.amount.text != "" else { return }
             ChargeService.instance.createCharge(
@@ -95,7 +93,7 @@ class ChargeVC: UIViewController {
                         SCLAlertView().showError("Error", subTitle: err.localizedDescription)
                     }else{
                         self.paymentInProgress = false
-                        SCLAlertView().showSuccess("Success", subTitle: "Payment successfully!")
+                        SCLAlertView().showSuccess("Success", subTitle: "Payment successful!")
                     }
             })
         }

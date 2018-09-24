@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D144F441213F7628009A54EB /* BongloyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D144F440213F7628009A54EB /* BongloyAPI.swift */; };
-		D19A98EA2148B65D009686FA /* Bongloy.m in Sources */ = {isa = PBXBuildFile; fileRef = D19A98E92148B65D009686FA /* Bongloy.m */; };
+		D15FA8CA215346CF004F6E2A /* BongloyAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D15FA8C9215346CF004F6E2A /* BongloyAPIClient.m */; };
 		D1A9825C213CE01E0095B070 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A9825B213CE01E0095B070 /* AppDelegate.swift */; };
 		D1A9825E213CE01E0095B070 /* ChargeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A9825D213CE01E0095B070 /* ChargeVC.swift */; };
 		D1A98261213CE01E0095B070 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1A9825F213CE01E0095B070 /* Main.storyboard */; };
@@ -24,10 +23,9 @@
 /* Begin PBXFileReference section */
 		0079FB3A910ECF91B001738D /* Pods_bongloy_demo_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bongloy_demo_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		999120E9B887CDAECA74FC46 /* Pods-bongloy-demo-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bongloy-demo-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-bongloy-demo-ios/Pods-bongloy-demo-ios.release.xcconfig"; sourceTree = "<group>"; };
-		D144F440213F7628009A54EB /* BongloyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BongloyAPI.swift; sourceTree = "<group>"; };
-		D184C51A214A576900AE2DDD /* Bongloy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bongloy.h; sourceTree = "<group>"; };
-		D19A98E82148B65D009686FA /* bongloy-demo-ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bongloy-demo-ios-Bridging-Header.h"; sourceTree = "<group>"; };
-		D19A98E92148B65D009686FA /* Bongloy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bongloy.m; sourceTree = "<group>"; };
+		D15FA8C8215346CF004F6E2A /* BongloyAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BongloyAPIClient.h; sourceTree = "<group>"; };
+		D15FA8C9215346CF004F6E2A /* BongloyAPIClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BongloyAPIClient.m; sourceTree = "<group>"; };
+		D19A98E82148B65D009686FA /* bongloy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bongloy-Bridging-Header.h"; sourceTree = "<group>"; };
 		D1A98258213CE01E0095B070 /* bongloy-demo-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bongloy-demo-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1A9825B213CE01E0095B070 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1A9825D213CE01E0095B070 /* ChargeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeVC.swift; sourceTree = "<group>"; };
@@ -74,9 +72,9 @@
 		D19A98E72148B634009686FA /* Support files */ = {
 			isa = PBXGroup;
 			children = (
-				D19A98E92148B65D009686FA /* Bongloy.m */,
-				D19A98E82148B65D009686FA /* bongloy-demo-ios-Bridging-Header.h */,
-				D184C51A214A576900AE2DDD /* Bongloy.h */,
+				D19A98E82148B65D009686FA /* bongloy-Bridging-Header.h */,
+				D15FA8C8215346CF004F6E2A /* BongloyAPIClient.h */,
+				D15FA8C9215346CF004F6E2A /* BongloyAPIClient.m */,
 			);
 			path = "Support files";
 			sourceTree = "<group>";
@@ -128,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				D1A98271213CE0970095B070 /* ChargeService.swift */,
-				D144F440213F7628009A54EB /* BongloyAPI.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -261,13 +258,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D144F441213F7628009A54EB /* BongloyAPI.swift in Sources */,
 				D1A98275213CE0C70095B070 /* Button.swift in Sources */,
+				D15FA8CA215346CF004F6E2A /* BongloyAPIClient.m in Sources */,
 				D1A9826F213CE05A0095B070 /* ThemeVC.swift in Sources */,
 				D1A98272213CE0970095B070 /* ChargeService.swift in Sources */,
 				D1A98277213CE0E60095B070 /* TextField.swift in Sources */,
 				D1A9825E213CE01E0095B070 /* ChargeVC.swift in Sources */,
-				D19A98EA2148B65D009686FA /* Bongloy.m in Sources */,
 				D1A9825C213CE01E0095B070 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,7 +419,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bongloy-demo-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "bongloy-demo-ios/Support files/bongloy-demo-ios-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "bongloy-demo-ios/Support files/bongloy-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -445,7 +441,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bongloy-demo-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "bongloy-demo-ios/Support files/bongloy-demo-ios-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "bongloy-demo-ios/Support files/bongloy-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
