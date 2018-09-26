@@ -55,7 +55,7 @@ class ChargeVC: UIViewController {
     override func viewDidLoad(){
         super.viewDidLoad()
         createTextField()
-        //createDoneButton()
+        createDoneButton()
         self.activityIndicator.color = #colorLiteral(red: 0.5859152079, green: 0.7754819989, blue: 0.3899528384, alpha: 1)
         self.view.addSubview(self.activityIndicator)
         self.activityIndicator.alpha = 0
