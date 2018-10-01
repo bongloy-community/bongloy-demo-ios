@@ -11,17 +11,6 @@ import Stripe
 import CreditCardForm
 import SCLAlertView
 
-extension STPAPIClient {
-    var apiURL: URL {
-        get{
-            return self.apiURL
-        }
-        set(newValue){
-            self.apiURL = newValue
-        }
-    }
-}
-
 class ChargeVC: UIViewController {
     
     @IBOutlet weak var BuyButton: HighlightingButton!
@@ -80,7 +69,7 @@ class ChargeVC: UIViewController {
         cardParam.expMonth = paymentCardTextField.expirationMonth
         cardParam.expYear = paymentCardTextField.expirationYear
         cardParam.cvc = paymentCardTextField.cvc
-        BongloyAPIClient.sharedBongloy().createToken(withCard: cardParam){ (token: STPToken?, error: Error?) in
+        BongloyAPIClient.shared().createToken(withCard: cardParam){ (token: STPToken?, error: Error?) in
             guard let token = token, error == nil else { return }
             guard let amountCharge = self.amount.text , self.amount.text != "" else { return }
             ChargeService.instance.createCharge(

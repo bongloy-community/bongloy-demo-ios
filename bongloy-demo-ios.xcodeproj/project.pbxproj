@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D15FA8CA215346CF004F6E2A /* BongloyAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D15FA8C9215346CF004F6E2A /* BongloyAPIClient.m */; };
+		D1769377215DE01B00B03121 /* BongloyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1769376215DE01B00B03121 /* BongloyAPI.swift */; };
 		D1A9825C213CE01E0095B070 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A9825B213CE01E0095B070 /* AppDelegate.swift */; };
 		D1A9825E213CE01E0095B070 /* ChargeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A9825D213CE01E0095B070 /* ChargeVC.swift */; };
 		D1A98261213CE01E0095B070 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1A9825F213CE01E0095B070 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		999120E9B887CDAECA74FC46 /* Pods-bongloy-demo-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bongloy-demo-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-bongloy-demo-ios/Pods-bongloy-demo-ios.release.xcconfig"; sourceTree = "<group>"; };
 		D15FA8C8215346CF004F6E2A /* BongloyAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BongloyAPIClient.h; sourceTree = "<group>"; };
 		D15FA8C9215346CF004F6E2A /* BongloyAPIClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BongloyAPIClient.m; sourceTree = "<group>"; };
+		D1769376215DE01B00B03121 /* BongloyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BongloyAPI.swift; sourceTree = "<group>"; };
 		D19A98E82148B65D009686FA /* bongloy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bongloy-Bridging-Header.h"; sourceTree = "<group>"; };
 		D1A98258213CE01E0095B070 /* bongloy-demo-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bongloy-demo-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1A9825B213CE01E0095B070 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				D1A98271213CE0970095B070 /* ChargeService.swift */,
+				D1769376215DE01B00B03121 /* BongloyAPI.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				D1A98272213CE0970095B070 /* ChargeService.swift in Sources */,
 				D1A98277213CE0E60095B070 /* TextField.swift in Sources */,
 				D1A9825E213CE01E0095B070 /* ChargeVC.swift in Sources */,
+				D1769377215DE01B00B03121 /* BongloyAPI.swift in Sources */,
 				D1A9825C213CE01E0095B070 /* AppDelegate.swift in Sources */,
 				D1F1010321588E82003337E2 /* Constants.swift in Sources */,
 			);

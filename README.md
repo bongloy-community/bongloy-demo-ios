@@ -69,75 +69,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   ```
   `BongloyAPIClient.h`
   ``` objc
+  #import <Stripe/Stripe.h>
+
   @interface BongloyAPIClient : STPAPIClient
-
-  /**
-   A shared singleton API client. Its API key will be initially equal to [Bongloy defaultPublishableKey].
-   */
-
-  + (instancetype)sharedBongloyClient;
-
-  /**
-   Initializes an API client with the given configuration. Its API key will be
-   set to the configuration's publishable key.
-
-   @param configuration The configuration to use.
-   @return An instance of BongloyAPIClient.
-   */
-
-  - (instancetype)initWithConfiguration:(STPPaymentConfiguration *)configuration NS_DESIGNATED_INITIALIZER;
-
-  @end
-
-  @interface BongloyAPIClient()
 
   @property (nonatomic, strong, readwrite) NSURL *apiURL;
   @property (nonatomic, strong, readonly) NSURLSession *urlSession;
+  @property (nonatomic, strong, readwrite) NSString *apiKey;
+
+  - (instancetype)initWithConfiguration:(STPPaymentConfiguration *)configuration NS_DESIGNATED_INITIALIZER;
 
   @end
   ```
   `BongloyAPIClient.m`
   ``` objc
-  #import "BongloyAPIClient.h"
+#import "BongloyAPIClient.h"
 
-  static NSString * const APIBaseURL = @"https://api.bongloy.com/v1";
+static NSString * const APIBaseURL = @"https://api.bongloy.com/v1";
 
-  @interface BongloyAPIClient()
+@implementation BongloyAPIClient
 
-  @property (nonatomic, strong, readwrite) NSMutableDictionary<NSString *,NSObject *> *sourcePollers;
-  @property (nonatomic, strong, readwrite) dispatch_queue_t sourcePollersQueue;
-  @property (nonatomic, strong, readwrite) NSString *apiKey;
-
-  @end
-
-  @implementation BongloyAPIClient
-
-  + (instancetype)sharedBongloyClient {
-    static id sharedBongloyClient;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{ sharedBongloyClient = [[self alloc] init]; });
-    return sharedBongloyClient;
-  }
-
-  - (instancetype)init {
-    return [self initWithConfiguration:[STPPaymentConfiguration sharedConfiguration]];
-  }
-
-  - (instancetype)initWithConfiguration:(STPPaymentConfiguration *)configuration {
+- (instancetype)initWithConfiguration:(STPPaymentConfiguration *)configuration {
     NSString *publishableKey = [configuration.publishableKey copy];
     self = [super initWithConfiguration:configuration];
     if (self) {
         _apiKey = publishableKey;
         _apiURL = [NSURL URLWithString:APIBaseURL];
-        super.configuration = configuration;
-        super.stripeAccount = configuration.stripeAccount;
-        _sourcePollers = [NSMutableDictionary dictionary];
-        _sourcePollersQueue = dispatch_queue_create("com.stripe.sourcepollers", DISPATCH_QUEUE_SERIAL);
         _urlSession = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     }
     return self;
-  }
-  @end
+}
+@end
   ```
 #### Create Token
   ``` swift
@@ -147,7 +109,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     cardParams.expYear = 2018
     cardParams.cvc = "123"
 
-    BongloyAPIClient.sharedBongloy().createToken(withCard: cardParam) { (token: STPToken?, error: Error?) in
+    BongloyAPIClient.shared().createToken(withCard: cardParam) { (token: STPToken?, error: Error?) in
       guard let token = token, error == nil else {
           // Present error to user...
           return
