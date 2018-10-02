@@ -69,7 +69,7 @@ class ChargeVC: UIViewController {
         cardParam.expMonth = paymentCardTextField.expirationMonth
         cardParam.expYear = paymentCardTextField.expirationYear
         cardParam.cvc = paymentCardTextField.cvc
-        BongloyAPI.bongloyInstance.createToken(withCard: cardParam){ (token: STPToken?, error: Error?) in
+        BongloyAPIClient.shared().createToken(withCard: cardParam){ (token: STPToken?, error: Error?) in
             guard let token = token, error == nil else { return }
             guard let amountCharge = self.amount.text , self.amount.text != "" else { return }
             ChargeService.instance.createCharge(
