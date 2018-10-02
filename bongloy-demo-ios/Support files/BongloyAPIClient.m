@@ -22,4 +22,5 @@ static NSString * const APIBaseURL = @"https://api.bongloy.com/v1";
     }
     return self;
 }
+
 @end

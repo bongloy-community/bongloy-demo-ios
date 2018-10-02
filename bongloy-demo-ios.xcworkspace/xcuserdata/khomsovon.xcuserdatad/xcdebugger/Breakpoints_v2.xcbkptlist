@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "bongloy-demo-ios/Support files/BongloyAPIClient.m"
-            timestampString = "560077706.223019"
+            filePath = "Pods/Stripe/Stripe/STPAPIRequest.m"
+            timestampString = "560079920.7410721"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "-initWithConfiguration:"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "+postWithAPIClient:endpoint:parameters:deserializers:completion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
