@@ -6,7 +6,7 @@ target 'bongloy-demo-ios' do
   use_frameworks!
 
   pod 'Stripe'
-  pod 'Alamofire'
+  pod 'Alamofire'   
   pod 'CreditCardForm'
   pod 'SCLAlertView'
 
