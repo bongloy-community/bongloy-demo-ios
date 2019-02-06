@@ -1,6 +1,6 @@
 Bongloy-demo-ios is a iOS app which demonstrates how to use Bongloy.
 ### Screenshots
-<img src="Screens/Bongloy-demo-ios.gif" width="300">
+<img src="Bongloy-demo-ios.gif" width="300">
 
 ## Installation
 
@@ -57,7 +57,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 ```
 #### Create `BongloyAPIClient` class
-  ![alt text](https://cl.ly/712522276e79/download/Image%2525202018-09-24%252520at%2525205.34.16%252520PM.png)
 
   Make sure `Subclass of` selected STPAPIClient and Language Objective-C click Next -> Create -> Create Bridging Header
 
@@ -102,9 +101,9 @@ static NSString * const APIBaseURL = @"https://api.bongloy.com/v1";
 #### Create Token
   ``` swift
     let cardParams = STPCardParams()
-    cardParams.number = "4242424242424242"
-    cardParams.expMonth = 10
-    cardParams.expYear = 2018
+    cardParams.number = "6200000000000005"
+    cardParams.expMonth = 12
+    cardParams.expYear = 2019
     cardParams.cvc = "123"
 
     BongloyAPIClient.shared().createToken(withCard: cardParam) { (token: STPToken?, error: Error?) in
