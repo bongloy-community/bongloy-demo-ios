@@ -18,7 +18,7 @@ class ChargeVC: UIViewController {
     @IBOutlet weak var cardHolder: TextField!
     @IBOutlet weak var creditCardView: CreditCardFormView!
     
-    let theme = ThemeVC().theme.stpTheme
+    let theme = STPTheme.default()
     let backendBaseUrl = BACKEND_BASE_URL
     let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
     let paymentCardTextField = STPPaymentCardTextField()

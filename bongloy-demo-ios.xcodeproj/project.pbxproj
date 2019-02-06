@@ -13,7 +13,6 @@
 		D1A98261213CE01E0095B070 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1A9825F213CE01E0095B070 /* Main.storyboard */; };
 		D1A98263213CE01F0095B070 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1A98262213CE01F0095B070 /* Assets.xcassets */; };
 		D1A98266213CE01F0095B070 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1A98264213CE01F0095B070 /* LaunchScreen.storyboard */; };
-		D1A9826F213CE05A0095B070 /* ThemeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A9826E213CE05A0095B070 /* ThemeVC.swift */; };
 		D1A98272213CE0970095B070 /* ChargeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A98271213CE0970095B070 /* ChargeService.swift */; };
 		D1A98275213CE0C70095B070 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A98274213CE0C70095B070 /* Button.swift */; };
 		D1A98277213CE0E60095B070 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A98276213CE0E60095B070 /* TextField.swift */; };
@@ -34,7 +33,6 @@
 		D1A98262213CE01F0095B070 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1A98265213CE01F0095B070 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1A98267213CE01F0095B070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D1A9826E213CE05A0095B070 /* ThemeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeVC.swift; sourceTree = "<group>"; };
 		D1A98271213CE0970095B070 /* ChargeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeService.swift; sourceTree = "<group>"; };
 		D1A98274213CE0C70095B070 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		D1A98276213CE0E60095B070 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				D1A9825D213CE01E0095B070 /* ChargeVC.swift */,
-				D1A9826E213CE05A0095B070 /* ThemeVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -271,7 +268,6 @@
 			files = (
 				D1A98275213CE0C70095B070 /* Button.swift in Sources */,
 				D15FA8CA215346CF004F6E2A /* BongloyAPIClient.m in Sources */,
-				D1A9826F213CE05A0095B070 /* ThemeVC.swift in Sources */,
 				D1A98272213CE0970095B070 /* ChargeService.swift in Sources */,
 				D1A98277213CE0E60095B070 /* TextField.swift in Sources */,
 				D1A9825E213CE01E0095B070 /* ChargeVC.swift in Sources */,
