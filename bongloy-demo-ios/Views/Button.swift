@@ -3,7 +3,6 @@
 //  bongloy-demo-ios
 //
 //  Created by khomsovon on 9/3/18.
-//  Copyright © 2018 bongloy. All rights reserved.
 //
 
 import UIKit
